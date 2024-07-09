@@ -22,7 +22,7 @@ headers = {
 }
 
 def get_result():
-    with open('weather_data.csv', mode='w', newline='') as file:
+    with open('weather_data_daily.csv', mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Time", "Temperature", "Dew Point", "Humidity",
                          "Wind", "Wind Speed", "Wind Gust",
@@ -79,7 +79,7 @@ def get_result():
                     writer.writerow([expire_time, temp, dewPt, Humidity,
                                      wdir_cardinal, wspd, gust,
                                      pressure, precip_total,wx_phrase])
-                print(f'数Data has been written to the file')
+                print(f'Data has been written to the file')
             else:
                 print(f'No data')
                 break
@@ -99,11 +99,11 @@ def convert_time(timestamp):
     dt_utc = datetime.datetime.fromtimestamp(timestamp, tz=pytz.utc)
 
     
-    hawaii = pytz.timezone("US/Hawaii")
-    dt_hawaii = dt_utc.astimezone(hawaii)
+    arizona = pytz.timezone("US/Arizona")
+    dt_arizona = dt_utc.astimezone(arizona)
 
     output_format = "%Y-%m-%d %H:%M:%S"
-    formatted_date = dt_hawaii.strftime(output_format)
+    formatted_date = dt_arizona.strftime(output_format)
 
     return formatted_date
 
