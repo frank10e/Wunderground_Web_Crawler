@@ -22,12 +22,7 @@ This project is a Python-based web crawler designed to fetch historical weather 
   - datetime: For date and time operations
   - pytz: For timezone conversions
 
-## Usage
+## Easy Way to do
 
-1. Ensure you have a valid Weather Underground API key.
-2. Update the API key in the script:
-```python
-params = {
-    "apiKey": "your_api_key_here",
-    # other parameters...
-}
+- If you only want to crawl the history of a specific Wunderground site, all you need to do is download the python file Wunderground_Web_Perp_Easy_To_Do.py and change the states_ids to the name of the site that Wunderground displays above, and set the station_names to the name you want. If you want to change the crawling date range, you need to change the start_date and end_date, the default is from January 1st, 2024 to September 1st, 2024
+
